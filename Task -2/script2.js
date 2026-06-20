@@ -117,18 +117,18 @@ console.log("\n Task 8: Increment & Decrement");
 console.log("----------------");
 
 // Pre Increment
-console.log(++visitors); // 101
+console.log("Pre Increment:", ++visitors); // First increases to 101, then prints 101
 
 // Post Increment
-console.log(visitors++); // 101
-console.log(visitors); // 102
+console.log("Post Increment:", visitors++); // Prints current value 101, then increases to 102
+console.log("After Post Increment:", visitors); // Now value becomes 102
 
 // Pre Decrement
-console.log(--visitors); // 101
+console.log("Pre Decrement:", --visitors); // First decreases to 101, then prints 101
 
 // Post Decrement
-console.log(visitors--); // 101
-console.log(visitors); // 100
+console.log("Post Decrement:", visitors--); // Prints current value 101, then decreases to 100
+console.log("After Post Decrement:", visitors); // Now value becomes 100
 
 
 // Task 9 : Comparison Checker
