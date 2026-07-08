@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mini Product Store</title>
+
+    <link rel="stylesheet" href="task20.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Mini Product Store</h1>
+
+        <div class="controls">
+
+            <input
+                type="text"
+                id="searchBox"
+                placeholder="Search Product"
+            >
+
+            <select id="categoryFilter">
+
+                <option value="all">All Categories</option>
+                <option value="electronics">Electronics</option>
+                <option value="jewelery">Jewellery</option>
+                <option value="men's clothing">Men's Clothing</option>
+                <option value="women's clothing">Women's Clothing</option>
+
+            </select>
+
+            <select id="priceFilter">
+
+                <option value="all">All Prices</option>
+                <option value="50">Below $50</option>
+                <option value="100">Below $100</option>
+                <option value="500">Below $500</option>
+
+            </select>
+
+            <button id="searchButton">
+                Search
+            </button>
+
+        </div>
+
+        <h2 id="productCount">
+
+            Total Products : 0
+
+        </h2>
+
+        <div id="products">
+
+        </div>
+
+    </div>
+
+    <script src="task20.js"></script>
+
+</body>
+
+</html>

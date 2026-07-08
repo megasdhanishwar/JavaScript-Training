@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS Task-8</title>
+</head>
+    <body>
+
+        <h1>Day - 8 Tasks</h1>
+
+        <script>
+            
+            let ApiLink = "https://fakestoreapi.com/products";
+
+            // Task 4 : Display Products Above ₹100
+
+            fetch(ApiLink)
+
+            .then(function(response){
+                return response.json();
+            })
+
+            .then(function(products){
+                console.log("\nTask 4 : Display Products Above ₹100");
+                console.log("----------------");
+
+                let filteredProducts = products.filter(function(product){
+                    return product.price > 100;
+                });
+
+                filteredProducts.forEach(function(product){
+                    console.log(product.title);
+                    console.log("Price : ₹" + product.price);
+                    console.log("----------------");
+                });
+
+            })
+
+            .catch(function(error){
+                console.log(error);
+            });
+
+            
+
+        </script>
+
+    </body>
+
+</html>

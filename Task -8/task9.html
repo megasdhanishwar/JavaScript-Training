@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS Task-8</title>
+</head>
+    <body>
+
+        <h1>Day - 8 Tasks</h1>
+
+        <script>
+            
+            let ApiLink = "https://fakestoreapi.com/products";
+
+            // Task 9 : Men's Clothing
+
+            fetch("https://fakestoreapi.com/products")
+
+            .then(function(response){
+                return response.json();
+            })
+
+            .then(function(products){
+                console.log("\nTask 9 : Men's Clothing");
+                console.log("----------------");
+
+                let mensProducts = products.filter(function(product){
+                    return product.category === "men's clothing";
+                });
+
+                mensProducts.forEach(function(product){
+                    console.log("=>", product.title);
+                });
+
+            })
+
+            .catch(function(error){
+                console.log(error);
+            });            
+
+        </script>
+
+    </body>
+
+</html>

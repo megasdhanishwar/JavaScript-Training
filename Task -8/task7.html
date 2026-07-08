@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS Task-8</title>
+</head>
+    <body>
+
+        <h1>Day - 8 Tasks</h1>
+
+        <script>
+            
+            let ApiLink = "https://fakestoreapi.com/products";
+                        
+            // Task 7 : Product Search
+
+            fetch("https://fakestoreapi.com/products")
+
+            .then(function(response){
+                return response.json();
+            })
+
+            .then(function(products){
+                let search = prompt("Enter Product Name");
+
+                console.log("Task 7 : Product Search");
+                console.log("----------------");
+
+                let searchedProducts = products.filter(function(product){
+                    return product.title.toLowerCase().includes(search.toLowerCase());
+                });
+
+                searchedProducts.forEach(function(product){
+                    console.log(product.title);
+                });
+
+            })
+
+            .catch(function(error){
+                console.log(error);
+            });
+            
+
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS Task-8</title>
+</head>
+    <body>
+
+        <h1>Day - 8 Tasks</h1>
+
+        <script>
+
+            // Task 1 : Show Product Count
+            let ApiLink = "https://fakestoreapi.com/products";
+
+            fetch(ApiLink)
+
+            .then(function(response){
+                return response.json();
+            })
+
+            .then(function(products){
+                console.log("\nTask 1 : Show Product Count");
+                console.log("----------------");
+
+                console.log("Total Products : " + products.length);
+            })
+
+            .catch(function(error){
+                console.log(error);
+            });
+
+        </script>
+    </body>
+</html>

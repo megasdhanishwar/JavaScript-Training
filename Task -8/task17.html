@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS Task-8</title>
+</head>
+    <body>
+
+        <h1>Day - 8 Tasks</h1>
+
+        <script>
+            
+            let ApiLink = "https://fakestoreapi.com/products";
+
+            // Task 17 : Cheapest Product
+
+            fetch("https://fakestoreapi.com/products")
+
+            .then(function(response){
+                return response.json();
+            })
+
+            .then(function(products){
+                console.log("\nTask 17 : Cheapest Product");
+                console.log("----------------");
+
+                let cheapestProduct = products.reduce(function(min, product){
+                    return product.price < min.price ? product : min;
+
+                });
+
+                console.log("Title    : " + cheapestProduct.title);
+                console.log("Price    : " + cheapestProduct.price);
+                console.log("Category : " + cheapestProduct.category);
+            })
+
+            .catch(function(error){
+                console.log(error);
+            });
+
+        </script>
+    </body>
+</html>

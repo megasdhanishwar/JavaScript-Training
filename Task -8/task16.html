@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS Task-8</title>
+</head>
+    <body>
+
+        <h1>Day - 8 Tasks</h1>
+
+        <script>
+            
+            let ApiLink = "https://fakestoreapi.com/products";
+
+            // Task 16 : Highest Rated Product
+
+            fetch("https://fakestoreapi.com/products")
+
+            .then(function(response){
+                return response.json();
+            })
+
+            .then(function(products){
+                console.log("\nTask 16 : Highest Rated Product");
+                console.log("----------------");
+
+                let highestRated = products.reduce(function(max, product){
+                    return product.rating.rate > max.rating.rate ? product : max;
+                });
+
+                console.log("Title      : " + highestRated.title);
+                console.log("Price      : " + highestRated.price);
+                console.log("Category   : " + highestRated.category);
+                console.log("Rating     : " + highestRated.rating.rate);
+
+            })
+
+            .catch(function(error){
+                console.log(error);
+            });
+
+            
+
+        </script>
+
+    </body>
+
+</html>

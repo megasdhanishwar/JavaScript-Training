@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS Task-8</title>
+</head>
+    <body>
+
+        <h1>Day - 8 Tasks</h1>
+
+        <script>
+            
+            let ApiLink = "https://fakestoreapi.com/products";
+
+            // Task 6 : Display Rating
+
+            fetch("https://fakestoreapi.com/products")
+
+            .then(function(response){
+                return response.json();
+            })
+
+            .then(function(products){
+                console.log("\nTask 6 : Display Rating");
+                console.log("----------------");
+
+                products.forEach(function(product){
+                    console.log(product.title);
+                    console.log("Rating : " + product.rating.rate);
+                    console.log("----------------");
+                });
+
+            })
+
+            .catch(function(error){
+                console.log(error);
+            });
+            
+
+        </script>
+
+    </body>
+
+</html>
