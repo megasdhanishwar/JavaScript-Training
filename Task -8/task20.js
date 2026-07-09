@@ -17,13 +17,7 @@ function displayProducts(products){
     productCount.innerHTML = "Total Products : " + products.length;
 
     if(products.length == 0){
-        productsContainer.innerHTML =
-        `
-            <h2 class="noProducts">
-                No Products Found
-            </h2>
-        `;
-
+        productsContainer.innerHTML = `<h2 class="noProducts"> No Products Found </h2>`;
         return;
     }
 
@@ -35,26 +29,21 @@ function displayProducts(products){
 
                 <img src="${product.image}" alt="image">
 
-                <h3>${product.title}</h3>
+                <h3>
+                    ${
+                        product.title.length > 50
+                        ? product.title.slice(0,50) + "..."
+                        : product.title
+                    }
+                </h3>
 
-                <p>
-                    <strong>Category :</strong>
-                    ${product.category}
-                </p>
+                <p> <strong>Category :</strong> ${product.category} </p>
 
-                <p>
-                    <strong>Price :</strong>
-                    $${product.price}
-                </p>
+                <p> <strong>Price :</strong> $${product.price} </p>
 
-                <p>
-                    <strong>Rating :</strong>
-                    ${product.rating.rate}
-                </p>
+                <p> <strong>Rating :</strong> ${product.rating.rate} </p>
 
-                <button class="buyButton">
-                    Buy Now
-                </button>
+                <button class="buyButton"> <strong>Buy Now</strong> </button>
 
             </div>
         `;
@@ -65,9 +54,10 @@ function displayProducts(products){
 
 fetch("https://fakestoreapi.com/products")
 
-.then(function(response){
-    if(!response.ok){
-        throw new Error("Unable to Load Products");
+.then(function (response) {
+    if (!response.ok) {
+      document.querySelector(".api").innerHTML = "<h2>Unable to Load Products</h2>";
+      return null;
     }
 
     return response.json();
@@ -80,18 +70,7 @@ fetch("https://fakestoreapi.com/products")
 })
 
 .catch(function(error){
-    productsContainer.innerHTML =
-    `
-        <h2 class="noProducts">
-
-            Unable to Load Products
-
-            <br><br>
-
-            Please try again later.
-
-        </h2>
-    `;
+    productsContainer.innerHTML = `<h2 class="noProducts"> Unable to Load Products <br><br> Please try again later. </h2>`;
 });
 
 
