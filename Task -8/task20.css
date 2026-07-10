@@ -10,7 +10,7 @@ body{
 
 .container{
     width: 100%;
-    max-width: 1400px;
+    /* max-width: 1400px; */
     margin: auto;
 }
 
@@ -24,6 +24,8 @@ h1{
     position:fixed;
     top:0;
     z-index:1000;
+
+    box-shadow:0 10px 25px rgba(38, 77, 95, 0.15);
 }
 
 h2{
@@ -89,9 +91,10 @@ h2{
 #products{
 
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+    grid-template-columns: repeat(4,1fr);
     gap: 30px;
     justify-items: center;
+    padding: 20px;
 
 }
 
