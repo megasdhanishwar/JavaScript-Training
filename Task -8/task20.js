@@ -39,8 +39,8 @@ function displayProducts(products){
 
                 <p> <strong>Category :</strong> ${product.category} </p>
 
-                <p> <strong>Price :</strong> $${product.price} </p>
-
+                <p><strong>Price :</strong> <span class="price">$${product.price}</span></p>
+                
                 <p> <strong>Rating :</strong> ${product.rating.rate} </p>
 
                 <button class="buyButton"> <strong>Buy Now</strong> </button>
