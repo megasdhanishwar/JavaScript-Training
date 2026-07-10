@@ -41,7 +41,7 @@ function displayProducts(products){
 
                 <p><strong>Price :</strong> <span class="price">$${product.price}</span></p>
                 
-                <p> <strong>Rating :</strong> ${product.rating.rate} </p>
+                <p> <strong>Rating :</strong><span class = "rating"> ${product.rating.rate}</span> <span class = "star">★</span> </p>
 
                 <button class="buyButton"> <strong>Buy Now</strong> </button>
 
